@@ -10,8 +10,11 @@ header {
     border-radius: var(--border-radius-lg);
 }
 
+h2{
+    text-align: center;
+}
+
 nav {
-    border-radius: var(--border-radius-md);
     margin: var(--margin-md);
     padding: var(--padding-xl);
 }
@@ -19,4 +22,24 @@ nav {
 main {
     border-radius: var(--border-radius-lg);
     margin-top: var(--margin-md);
+}
+
+section {
+
+}
+
+@media (min-width: 1024px) {
+    nav {
+        border-top-left-radius: var(--border-radius-md);
+        border-bottom-left-radius: var(--border-radius-md);
+    }
+    section {
+        border-top-right-radius: var(--border-radius-md);
+        border-bottom-right-radius: var(--border-radius-md);
+    }
+}
+@media (max-width: 1023px) {
+    nav {
+
+    }
 }

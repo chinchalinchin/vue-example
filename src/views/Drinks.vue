@@ -1,3 +1,9 @@
+<template>
+  <section>
+    <h2>Drink Menu</h2>
+  </section>
+</template>
+
 <script>
 export default {
   data () {
@@ -8,8 +14,11 @@ export default {
 }
 </script>
 
-<template>
-  <section>
-    This is the Drinks page
-  </section>
-</template>
+<style scoped>
+section {
+  width: 100%;
+}
+h2{
+  width: 100%;
+}
+</style>

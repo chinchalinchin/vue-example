@@ -1,3 +1,9 @@
+<template>
+  <section>
+
+  </section>
+</template>
+
 <script>
 export default {
   data () {
@@ -8,8 +14,11 @@ export default {
 }
 </script>
 
-<template>
-    <section>
-
-    </section>
-</template>
+<style scoped>
+section{
+  width: 100%;
+}
+h2{
+  width: 100%;
+}
+</style>

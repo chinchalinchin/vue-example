@@ -46,13 +46,6 @@
   --triadic-050: #f8f8ec;
 }
 
-:root {
-  --primary: var(--primary-600);
-  --complementary: var(--complementary-700);
-  --analogous: var(--analogous-700);
-  --triadic: var(--triadic-900)
-}
-
 body {
   background-color: var(--primary-300);
 }
@@ -68,6 +61,10 @@ nav {
 
 main {
   background-color: var(--primary-500);
+}
+
+section {
+  background-color: var(--primary-100);
 }
 /* 
 @media (prefers-color-scheme: dark) {
