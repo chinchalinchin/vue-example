@@ -1,18 +1,17 @@
 <template>
-    <RouterLink id="icon-link-wrapper"
+    <RouterLink id="icon-link"
+        class="icon"
         :to="route"
-        v-if="this.config.link">
+        :tabindex="focusable ? 1 : -1"
+        v-if="this.link">
         <img :id="this.id"
             :alt="this.alt"
-            :class="{
-                'control': this.config.control
-            }"
             :src="`src/assets/svg/${icon}.svg`"
             :style="{
-                'width': this.dimensions.width, 
-                'height': this.dimensions.height
+                'width': this.width, 
+                'height': this.height
             }"
-            :tabindex="focusable ? 1 : -1"
+            class="icon-img"
             />
     </RouterLink>
 </template>
@@ -24,27 +23,26 @@ export default {
     computed: {
 
     },
-    methods: {
-
+    data () {
+        return {
+        }
     },
     props: {
         alt: {
             Type: String,
             default: 'Icon'
         },
-        config: {
-            Type: Object,
-            default: {
-                control: true,
-                link: true
-            }
+        control: {
+            Type: Boolean,
+            default: true
         },
-        dimensions: {
-            Type: Object,
-            default: {
-                width: '32px',
-                height: '32px'
-            } 
+        height: {
+            Type: String,
+            default: '32px'
+        },
+        link: {
+            Type: Boolean,
+            default: true
         },
         focusable: {
             Type: Boolean,
@@ -52,7 +50,7 @@ export default {
         },
         icon: {
             Type: String,
-            default: 'meal_coffee_cup'
+            default: 'coffee_cup'
         },
         id: {
             Type: String,
@@ -61,22 +59,11 @@ export default {
         route: {
             Type: String,
             default: ''
+        },
+        width: {
+            Type: String,
+            default: '32px'
         }
     }
 }
 </script>
-
-<style scoped>
-.control {
-    border-radius: 55px;
-    box-shadow: var(--shadow-control) var(--shadow-control) 10px black;
-}
-img:focus,
-img:hover{
-    transform: scale(1.15);
-    -webkit-filter: brightness(1.15);
-    -moz-filter: brightness(1.15);
-    -ms-filter: brightness(1.15);
-    filter: brightness(1.15);
-}
-</style>

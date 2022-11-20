@@ -1,0 +1,8 @@
+@keyframes slide-in-center {
+    0% { 
+        margin-left: 0;
+    }
+    100% {
+        margin-left: 80%;
+    }
+}

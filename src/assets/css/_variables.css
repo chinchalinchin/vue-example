@@ -1,7 +1,11 @@
 :root {
-    --border-radius-lg: 20px;
-    --border-radius-md: 15px;
-    --border-radius-sm: 10px;
+    --animation-lg: 2s;
+    --animation-md: 1s;
+    --animation-sm: 0.5s;
+    
+    --border-radius-lg: 100px;
+    --border-radius-md: 75px;
+    --border-radius-sm: 50px;
 
     --margin-xl: 15px;
     --margin-lg: 10px;

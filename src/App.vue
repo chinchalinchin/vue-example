@@ -4,11 +4,20 @@
   </header>
   <main>
     <nav>
-      <Icon :id="element.id"
-        :icon="element.icon"
-        :dimensions="iconDimensions"
-        :route="element.route"
-        v-for="element in this.navigation"
+      <Icon :id="value.id"
+        :class="{
+          'active': value.enabled
+        }"
+        :icon="value.icon"
+        :height="iconConfiguration.height"
+        :width="iconConfiguration.width"
+        :route="value.route"
+        @click="handleIconClick(key)"
+        @keyup.left="previousIcon(key)"
+        @keyup.down="previousIcon(key)"
+        @keyup.right="nextIcon(key)"
+        @keyup.up="nextIcon(key)"
+        v-for="(value, key) in this.navigation"
       ></Icon>
     </nav>
     <RouterView/>
@@ -28,30 +37,48 @@
     },
     data () {
       return {
-        navigation: [
-          {
+        navigation: {
+          0: {
             alt: 'view drink menu',
-            icon: 'meal_coffee_cup',
+            icon: 'coffee_mug',
             id: 'drink-menu-link',
-            route: 'drinks'
+            route: 'drinks',
+            enabled: false
           },
-          {
+          1: {
             alt: 'view breakfast menu',
-            icon: 'meal_breakfast',
+            icon: 'egg',
             id: 'breakfast-menu-link',
-            route: 'breakfast'
+            route: 'breakfast',
+            enabled: false
           },
-          {
+          2: {
             alt: 'view lunch menu',
-            icon: 'meal_quesadilla',
+            icon: 'meal',
             id: 'lunch-menu-link',
-            route: 'lunch'
+            route: 'lunch', 
+            enabled: false
           }
-        ],
-        iconDimensions: {
-          width: '100px',
-          height: '100px'
+        },
+        iconConfiguration: {
+          width: '50px',
+          height: '50px'
         }
+      }
+    },
+    methods: {
+      handleIconClick (key) {
+        Object.keys(this.navigation).forEach((resetKey)=>{
+          if(resetKey !== key) this.navigation[resetKey].enabled = false
+        })
+        this.navigation[key].enabled=!this.navigation[key].enabled
+
+      },
+      nextIcon (key) {
+
+      },
+      previousIcon (key) {
+
       }
     }
   }
@@ -65,24 +92,28 @@
 
 <style scoped>
 header {
-  height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 }
+
+h1 {
+  margin-left: var(--margin-lg);
+}
+
 main {
-  min-height: 87.5%;
-  max-height: 90%;
-  display: flex;
-  flex-direction: row;
-}
-nav {
-  box-shadow: var(--shadow-bg1) var(--shadow-bg1) var(--shadow-bg3) black;
-  min-height: 100%;
+  height: 85%;
   display: flex;
   flex-direction: column;
+}
+
+nav {
+  box-shadow: var(--shadow-bg1) var(--shadow-bg1) var(--shadow-bg3) black;
+  display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
 }
+
 footer {
   align-content: center;
   display: flex;
@@ -91,5 +122,11 @@ footer {
   min-height: 2.5%;
   max-height: 5%;
   text-align: center;
+}
+
+.icon{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
 }
 </style>

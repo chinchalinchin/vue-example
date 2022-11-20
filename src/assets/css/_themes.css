@@ -47,28 +47,33 @@
 }
 
 body {
-  background-color: var(--primary-300);
+  background-color: var(--primary-100);
 }
 
 header {
-  color: white;
-  background-color: var(--primary-400);
+  background-color: var(--primary-300);
+  border-bottom: 1px var(--primary-900) solid;
 }
 
 nav {
-  background-color: var(--primary-800);
+  background-color: var(--primary-200);
+}
+ 
+.icon:hover:not(.active) {
+  background-color: var(--primary-300);
+}
+.icon:hover {
+  background-color: var(--analogous-400);
+}
+.icon:active {
+  background-color: var(--analogous-600);
+}
+.active {
+  background-color: var(--analogous-300);
 }
 
-main {
-  background-color: var(--primary-500);
-}
-
-section {
-  background-color: var(--primary-100);
-}
-/* 
 @media (prefers-color-scheme: dark) {
   :root {
 
   }
-} */
+}

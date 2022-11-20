@@ -16,9 +16,8 @@ export default {
 
 <style scoped>
 section {
-  width: 100%;
 }
 h2{
-  width: 100%;
+
 }
 </style>
