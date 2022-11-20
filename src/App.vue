@@ -13,6 +13,9 @@
     </nav>
     <RouterView/>
   </main>
+  <footer>
+    &copy; Cumberland Cloud, 2022
+  </footer>
   
 </template>
 
@@ -62,13 +65,14 @@
 
 <style scoped>
 header {
-  height: 15%;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 main {
-  min-height: 80%;
+  min-height: 87.5%;
+  max-height: 90%;
   display: flex;
   flex-direction: row;
 }
@@ -78,5 +82,14 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+footer {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 2.5%;
+  max-height: 5%;
+  text-align: center;
 }
 </style>
