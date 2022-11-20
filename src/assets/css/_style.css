@@ -1,0 +1,22 @@
+@import './_themes.css';
+@import './_variables.css';
+
+
+html, body, #app {
+    height: 100%
+}
+
+header {
+    border-radius: var(--border-radius-lg);
+}
+
+nav {
+    border-radius: var(--border-radius-md);
+    margin: var(--margin-md);
+    padding: var(--padding-xl);
+}
+
+main {
+    border-radius: var(--border-radius-lg);
+    margin-top: var(--margin-md);
+}
