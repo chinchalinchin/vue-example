@@ -71,7 +71,7 @@
         Object.keys(this.navigation).forEach((resetKey)=>{
           if(resetKey !== key) this.navigation[resetKey].enabled = false
         })
-        this.navigation[key].enabled=!this.navigation[key].enabled
+        this.navigation[key].enabled=true
 
       },
       nextIcon (key) {
